@@ -23,8 +23,8 @@ function askForName() {
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-  console.log(question);
-  candidateAnswer = input.question();
+
+  candidateAnswer = input.question(question);
 
 
 }
@@ -48,11 +48,11 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-   console.log(`Hello ${candidateName}`);
+  console.log(`Hello ${candidateName}`);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
-
+runProgram();
 // ----------- Don't write any code or change any code below this line ---------- //
 module.exports = {
   candidateName: candidateName,
