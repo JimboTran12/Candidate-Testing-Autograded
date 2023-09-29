@@ -42,8 +42,19 @@ function gradeQuiz(candidateAnswers) {
 
 
 
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+  let grade = 0;  //TODO 3.2 use this variable to calculate the candidates score.
+  for(let i = 0; i < questions.length; i++) {
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+      grade++;
+    }    
+  }
+  grade = grade / questions.length * 100;
+  if (grade >= 80) {
+    console.log(`Candidate passed with a score of ${grade}%`);
+  } else {
+    console.log(`Candidate failed with a score of ${grade}%`);
 
+  }
 
   return grade;
 }
@@ -55,7 +66,6 @@ function runProgram() {
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
-
 // ----------- Don't write any code or change any code below this line ---------- //
 module.exports = {
   candidateName: candidateName,
